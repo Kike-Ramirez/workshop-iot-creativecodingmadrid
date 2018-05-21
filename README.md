@@ -35,10 +35,10 @@ Spring Meeting Creative Coding Madrid PDF Festival, Matadero, Madrid.
 
 ## Implemented on
 
-[**1. Raspberry PI 3**](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+[**1. Raspberry PI 3**](https://www.raspberrypi.org/products/raspberry-pi-3-model-b)
 ![Raspberry PI 3](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/images/raspberrypi-3-hardware-600.jpg)
 
-[**2. nodeMCU**](http://nodemcu.com/index_en.html)
+[**2. NodeMCU_amica_v1.0**](http://nodemcu.com/index_en.html)
 ![nodeMCU](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT%20Node/images/nodeMCU.jpg)
 
 
