@@ -3,13 +3,13 @@
 #include <ESP8266WiFi.h>
 
 
-#define WIFI_AP "KikeRamirez"
-#define WIFI_PASSWORD "12345679"
+#define WIFI_AP "SSID"
+#define WIFI_PASSWORD "PASSWORD"
 
-#define TOKEN "B0gCNj8nf0NxTMrq4iIl"
+#define TOKEN "ACCESS_TOKEN"
 
 // DHT
-#define DHTPIN 14
+#define DHTPIN 14       // For D5 pin
 #define DHTTYPE DHT22
 
 char thingsboardServer[] = "192.168.43.14";
@@ -42,7 +42,7 @@ void loop()
     reconnect();
   }
 
-  if ( millis() - lastSend > 1000 ) { // Update and send only after 1 seconds
+  if ( millis() - lastSend > 5000 ) { // Update and send only after 1 seconds
     getAndSendTemperatureAndHumidityData();
     lastSend = millis();
   }
