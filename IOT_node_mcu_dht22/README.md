@@ -1,17 +1,18 @@
 # Raspberry PI 3
-# Backend THINGSBOARD.IO Installation
-
+# Temperature & Humidity Sensor Node Installation
+# Using a nodeMCU-Amica board
 
 ## Preliminars
 
-1. If not done before, update your system.
-2. Check your java version is minimum 1.8.0_65, using:
+1. Download and install latest Arduino IDE: https://www.arduino.cc/en/Main/Software
 
-`java -version`
+2. Go to Preferences and set platform extension JSON:
 
-![java version](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/checkJAVA.png)
+`http://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
-3. If necessary, update java version or install it.
+![preferences](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_node_mcu_dht22/images/arduino_ide_setup.jpg)
+
+3. Go to platforms, .
 
 4. Install POSGRESQL DATABASE if preferred (thingsboard uses an internal one, but this step is recommended)
 
