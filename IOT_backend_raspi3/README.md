@@ -104,3 +104,20 @@ Where [RASPBERRY_IP] is your raspberry IP address. (check it using `ifconfig`)
 
 NOTE: It may take some minutes to be accessible. Be patient.
 
+
+## Default users available
+
+ThingsBoard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
+
+1. System Administrator: Default system administrator account.
+login - sysadmin@thingsboard.org.
+password - sysadmin.
+
+2. Demo Tenant: Default tenant administrator account.
+login - tenant@thingsboard.org.
+password - tenant.
+
+3. Demo tenant customers: All users have “customer” password.
+* Customer A users - customer@thingsboard.org or customerA@thingsboard.org.
+* Customer B users - customerB@thingsboard.org.
+* Customer C users - customerC@thingsboard.org.
