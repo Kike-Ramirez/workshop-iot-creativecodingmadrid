@@ -3,16 +3,16 @@
 #include <ESP8266WiFi.h>
 
 
-#define WIFI_AP "SSID"
-#define WIFI_PASSWORD "PASSWORD"
+#define WIFI_AP "KikeRamirez"
+#define WIFI_PASSWORD "12345679"
 
-#define TOKEN "ESP8266_DEMO_TOKEN"
+#define TOKEN "B0gCNj8nf0NxTMrq4iIl"
 
 // DHT
-#define DHTPIN 5
+#define DHTPIN 14
 #define DHTTYPE DHT22
 
-char thingsboardServer[] = "YOUR_THINGSBOARD_HOST_OR_IP";
+char thingsboardServer[] = "192.168.43.14";
 
 WiFiClient wifiClient;
 
