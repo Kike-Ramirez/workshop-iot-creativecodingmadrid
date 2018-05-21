@@ -9,6 +9,8 @@
 
 `java -version`
 
+![java version](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/checkJAVA.png)
+
 3. If necessary, update java version or install it.
 
 4. Install POSGRESQL DATABASE if preferred (thingsboard uses an internal one, but this step is recommended)
@@ -16,7 +18,6 @@
 * Install necessary packages and start database service:
 `sudo apt-get install postgresql postgresql-contrib -y`
 `sudo service postgresql start`
-
 
 * If you want to create a new user for database, check: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04#using-postgresql-roles-and-databases
 
@@ -48,6 +49,10 @@
 `$ sudo dpkg -i thingsboard-1.4.deb`
 `# Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf`
 `export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M" ` 
+
+![thingsboard_setup](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/thingsboard_download.png)
+
+![thingsboard_install](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/thingsboard_install.png)
 
 2. Configure POSTGRES as database server
 
@@ -94,6 +99,8 @@
 `# --loadDemo option will load demo data: users, devices, assets, rules, widgets.`
 `sudo /usr/share/thingsboard/bin/install/install.sh --loadDemo`
 
+![thingsboard_script](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/thingsboard_launch.png)
+
 4. Start Thingsboard Service
 
 `sudo service thingsboard start`
@@ -103,6 +110,8 @@
 Where [RASPBERRY_IP] is your raspberry IP address. (check it using `ifconfig`)
 
 NOTE: It may take some minutes to be accessible. Be patient.
+
+![thingsboard_webui](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/thingsboard_webui.png)
 
 
 ## Default users available
@@ -121,3 +130,9 @@ password - tenant.
 * Customer A users - customer@thingsboard.org or customerA@thingsboard.org.
 * Customer B users - customerB@thingsboard.org.
 * Customer C users - customerC@thingsboard.org.
+
+## First Acess - Initial config
+Acess using "tenant" account, you will reach this dashboard:
+
+![Tenant default dashboard](tenant@thingsboard.org)
+
