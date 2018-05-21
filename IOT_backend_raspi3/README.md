@@ -21,10 +21,86 @@
 * If you want to create a new user for database, check: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04#using-postgresql-roles-and-databases
 
 * Set a new PASSWORD for main user (postgres), ideally use also "postgres" to avoid modifying setting files. Check: https://blog.2ndquadrant.com/how-to-safely-change-the-postgres-user-password-via-psql/
+
+`sudo -i -u postgres`
+`psql`
 `postgres=# \password`
 `Enter new password:`
 `Enter it again:`
 `postgres=#`
 
+* Launch database server and connect it to Server
 
+`psql -U postgres -d postgres -h 127.0.0.1 -W`
+
+`CREATE DATABASE thingsboard;`
+`\q`
+
+
+
+## Thingsboard.io Server - Install & Launch
+
+1. Download debian package
+
+`# Download the package`
+`$ wget https://github.com/thingsboard/thingsboard/releases/download/v1.4/thingsboard-1.4.deb`
+`# Install ThingsBoard as a service`
+`$ sudo dpkg -i thingsboard-1.4.deb`
+`# Update ThingsBoard memory usage and restrict it to 150MB in /etc/thingsboard/conf/thingsboard.conf`
+`export JAVA_OPTS="$JAVA_OPTS -Dplatform=rpi -Xms256M -Xmx256M" ` 
+
+2. Configure POSTGRES as database server
+
+`sudo nano /etc/thingsboard/conf/thingsboard.yml`
+
+* Comment ‘# HSQLDB DAO Configuration’ block.
+
+`# HSQLDB DAO Configuration`
+`#spring:`
+`#  data:`
+`#    jpa:`
+`#      repositories:`
+`#        enabled: "true"`
+`#  jpa:`
+`#    hibernate:`
+`#      ddl-auto: "validate"`
+`#    database-platform: "org.hibernate.dialect.HSQLDialect"`
+`#  datasource:`
+`#    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.hsqldb.jdbc.JDBCDriver}"`
+`#    url: "${SPRING_DATASOURCE_URL:jdbc:hsqldb:file:${SQL_DATA_FOLDER:/tmp}/thingsboardDb;sql.enforce_size=false}"`
+`#    username: "${SPRING_DATASOURCE_USERNAME:sa}"`
+`#    password: "${SPRING_DATASOURCE_PASSWORD:}"`
+
+* Uncomment ‘# PostgreSQL DAO Configuration’ block. Be sure to update the postgres databases username and password in the bottom two lines of the block (here, as shown, they are both “postgres”).
+
+`# PostgreSQL DAO Configuration`
+`spring:`
+`  data:`
+`    jpa:`
+`      repositories:`
+`        enabled: "true"`
+`  jpa:`
+`    hibernate:`
+`      ddl-auto: "validate"`
+`    database-platform: "org.hibernate.dialect.PostgreSQLDialect"`
+`  datasource:`
+`    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"`
+`    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/thingsboard}"`
+`    username: "${SPRING_DATASOURCE_USERNAME:postgres}"`
+`    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"`
+
+3. Run Installation Script
+
+`# --loadDemo option will load demo data: users, devices, assets, rules, widgets.`
+`sudo /usr/share/thingsboard/bin/install/install.sh --loadDemo`
+
+4. Start Thingsboard Service
+
+`sudo service thingsboard start`
+
+5. Open in your laptop broser Thingsboard URL: http://[RASPBERRY_IP]:8080/
+
+Where [RASPBERRY_IP] is your raspberry IP address. (check it using `ifconfig`)
+
+NOTE: It may take some minutes to be accessible. Be patient.
 
