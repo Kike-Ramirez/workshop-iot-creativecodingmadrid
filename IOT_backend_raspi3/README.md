@@ -134,5 +134,5 @@ password - tenant.
 ## First Acess - Initial config
 Acess using "tenant" account, you will reach this dashboard:
 
-![Tenant default dashboard](tenant@thingsboard.org)
+![Tenant default dashboard](https://github.com/Kike-Ramirez/workshop-iot-creativecodingmadrid/blob/master/IOT_backend_raspi3/images/thingsboard_tenant_dashboard.png)
 
