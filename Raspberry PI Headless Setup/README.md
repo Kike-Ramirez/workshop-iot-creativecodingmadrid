@@ -86,7 +86,7 @@ In this case, you should define parameters for 'wlan0' interface.
 * To check your DNS IP:
 `nmcli dev show | grep DNS`
 
-If not installed you must install:
+If not installed you must install it using apt manager:
 `sudo apt-get install network-manager`
 
 
